@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: #faf3e0;
+    color: #333;
+    padding: 30px 10px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #4b5563;
+}
+
+.author-photo {
+    display: block;
+    width: 150px; /* Ubah sesuai kebutuhan */
+    height: auto;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 3px solid #4b5563;
+}
+
+.author {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #9ca3af;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+button {
+    background-color: #fbbf24;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #f59e0b;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.story-section {
+    display: none;
+    margin-top: 50px;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.start-button {
+    background-color: #4b5563;
+}
+
+.finish-button {
+    background-color: #ef4444;
+}
+
+/* Form Section */
+form {
+  margin-top: 20px;
+}
+.info-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #f9fafb;
+}
+
+.info-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.info-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
