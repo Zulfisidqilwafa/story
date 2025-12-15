@@ -29,7 +29,7 @@ h1 {
 
 .author-photo {
     display: block;
-    width: 150px; /* Ubah sesuai kebutuhan */
+    width: 150px;
     height: auto;
     border-radius: 50%;
     margin: 20px auto;
@@ -43,10 +43,11 @@ h1 {
     color: #9ca3af;
 }
 
+/* PERUBAHAN UTAMA DI SINI */
 p {
     font-size: 1.25rem;
     line-height: 1.75;
-    margin-bottom: 30px;
+    margin-bottom: 15px; /* Diubah dari 30px menjadi 15px untuk kerapatan */
     text-align: justify;
 }
 
