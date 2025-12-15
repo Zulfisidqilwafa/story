@@ -43,11 +43,11 @@ h1 {
     color: #9ca3af;
 }
 
-/* PERUBAHAN UTAMA DI SINI */
+/* PERUBAHAN UTAMA UNTUK KERAPATAN PARAGRAF */
 p {
     font-size: 1.25rem;
-    line-height: 1.75;
-    margin-bottom: 15px; /* Diubah dari 30px menjadi 15px untuk kerapatan */
+    line-height: 1.5; /* Diubah dari 1.75 ke 1.5 (Jarak antar baris dalam satu paragraf) */
+    margin-bottom: 1em; /* Diubah dari 30px menjadi 1em (Jarak antar paragraf) */
     text-align: justify;
 }
 
@@ -81,7 +81,7 @@ button:active {
 
 .story-section {
     display: none;
-    margin-top: 50px;
+    margin-top: 20px; /* Diubah dari 50px menjadi 20px (Jarak antar section cerita) */
 }
 
 .fade-in {
