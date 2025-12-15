@@ -2,7 +2,7 @@ const startButton = document.getElementById('startButton');
 const music = document.getElementById('backgroundMusic');
 const sections = document.querySelectorAll('.story-section');
 let currentSectionIndex = 0;
-const scrollSpeed = 30000; // 10 seconds for each section
+const scrollSpeed = 20000; // 10 seconds for each section
 
 startButton.addEventListener('click', () => {
     music.play();  // Memainkan musik
