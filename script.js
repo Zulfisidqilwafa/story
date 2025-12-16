@@ -1,36 +1,75 @@
+// ===============================
+// AMBIL ELEMEN
+// ===============================
 const startButton = document.getElementById('startButton');
+const finishButton = document.getElementById('finishButton');
 const music = document.getElementById('backgroundMusic');
 const sections = document.querySelectorAll('.story-section');
-let currentSectionIndex = 0;
-const scrollSpeed = 20000; // 10 seconds for each section
+const infoForm = document.getElementById('infoForm');
 
-startButton.addEventListener('click', () => {
-    music.play();  // Memainkan musik
-    startButton.style.display = 'none';  // Menyembunyikan tombol mulai
-    autoScrollStory();  // Memulai auto-scroll cerita
+// ===============================
+// KONFIGURASI
+// ===============================
+let currentSectionIndex = 0;
+const scrollSpeed = 20000; // durasi tampil per section (ms)
+music.volume = 0.3;       // volume musik (0.0 - 1.0)
+
+// ===============================
+// LOOP MUSIK
+// ===============================
+music.addEventListener('ended', () => {
+    music.currentTime = 0;
+    music.play();
 });
 
+// ===============================
+// EVENT: MULAI MEMBACA
+// ===============================
+startButton.addEventListener('click', () => {
+    music.play().catch(() => {
+        // mencegah error di beberapa browser mobile
+    });
+
+    startButton.style.display = 'none';
+    autoScrollStory();
+});
+
+// ===============================
+// AUTO SCROLL CERITA
+// ===============================
 function autoScrollStory() {
     if (currentSectionIndex < sections.length) {
-        const section = sections[currentSectionIndex];
-        section.style.display = 'block';  // Tampilkan section saat ini
-        section.classList.add('fade-in');  // Tambahkan efek fade-in
-        scrollToSection(section.id);  // Scroll ke section saat ini
 
-        currentSectionIndex++;  // Pindah ke section berikutnya
-        setTimeout(autoScrollStory, scrollSpeed);  // Pindah ke section berikutnya setelah 5 detik
+        const section = sections[currentSectionIndex];
+
+        section.style.display = 'block';
+        section.classList.add('fade-in');
+
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        currentSectionIndex++;
+        setTimeout(autoScrollStory, scrollSpeed);
+
     } else {
-        document.getElementById('finishButton').style.display = 'block';  // Tampilkan tombol selesai setelah cerita selesai
+        if (finishButton) {
+            finishButton.style.display = 'block';
+        }
     }
 }
 
-// Fungsi untuk smooth scroll ke section tertentu
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.scrollIntoView({ behavior: 'smooth' });
-}
+// ===============================
+// EVENT: TENTANG PENULIS
+// ===============================
+if (finishButton) {
+    finishButton.addEventListener('click', () => {
+        infoForm.classList.remove('hidden');
 
-// Menangani tombol selesai
-document.getElementById('finishButton').addEventListener('click', () => {
-    document.getElementById('infoForm').classList.remove('hidden');  // Menampilkan form setelah tombol selesai ditekan
-});
+        infoForm.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+}
