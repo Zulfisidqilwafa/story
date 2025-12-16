@@ -1,3 +1,6 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,28 +11,36 @@ body {
     font-family: 'Georgia', serif;
     background: #faf3e0;
     color: #333;
-    padding: 30px 10px;
+    padding: 24px 10px;
 }
 
+/* =========================
+   CONTAINER UTAMA
+========================= */
 .container {
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 22px;
     background: #ffffff;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+/* =========================
+   JUDUL & IDENTITAS
+========================= */
 h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: #4b5563;
+    line-height: 1.3;
 }
 
 .author-photo {
     display: block;
-    width: 150px;
+    width: 140px;
+    max-width: 45%;
     height: auto;
     border-radius: 50%;
     margin: 20px auto;
@@ -37,33 +48,45 @@ h1 {
 }
 
 .author {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: #9ca3af;
 }
 
-/* PERUBAHAN UTAMA UNTUK KERAPATAN PARAGRAF */
+/* =========================
+   PARAGRAF CERITA
+========================= */
 p {
-    font-size: 1.25rem;
-    line-height: 1.5; /* Diubah dari 1.75 ke 1.5 (Jarak antar baris dalam satu paragraf) */
-    margin-bottom: 1em; /* Diubah dari 30px menjadi 1em (Jarak antar paragraf) */
+    font-size: 1.15rem;
+    line-height: 1.65;
+    margin-bottom: 1.2em;
     text-align: justify;
+    word-break: break-word;
 }
 
+/* =========================
+   SECTION CERITA
+========================= */
+.story-section {
+    display: none;
+    margin-top: 20px;
+}
+
+/* =========================
+   BUTTON
+========================= */
 button {
     background-color: #fbbf24;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    color: white;
+    padding: 14px 28px;
+    font-size: 1.05rem;
+    color: #ffffff;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    transition: all 0.3s ease;
+    margin: 25px auto 0;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -71,32 +94,12 @@ button:hover {
     background-color: #f59e0b;
 }
 
+button:active {
+    transform: scale(0.97);
+}
+
 button:focus {
     outline: none;
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-.story-section {
-    display: none;
-    margin-top: 20px; /* Diubah dari 50px menjadi 20px (Jarak antar section cerita) */
-}
-
-.fade-in {
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .start-button {
@@ -107,12 +110,33 @@ button:active {
     background-color: #ef4444;
 }
 
-/* Form Section */
-form {
-  margin-top: 20px;
+/* =========================
+   ANIMASI
+========================= */
+.fade-in {
+    animation: fadeIn 1.4s ease-in-out;
 }
-.info-form {
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   FORM INFO PENULIS
+========================= */
+form {
     margin-top: 20px;
+}
+
+.info-form {
+    margin-top: 25px;
     padding: 20px;
     border: 1px solid #d1d5db;
     border-radius: 10px;
@@ -121,18 +145,57 @@ form {
 
 .info-form label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
 .info-form input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     border: 1px solid #d1d5db;
     border-radius: 5px;
+    background: #ffffff;
 }
 
 .hidden {
     display: none;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+@media (max-width: 600px) {
+
+    body {
+        padding: 16px 8px;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .author-photo {
+        width: 110px;
+    }
+
+    .author {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
 }
